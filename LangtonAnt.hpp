@@ -4,13 +4,14 @@
 
 #ifndef LANGTON2_LANGTONANT_HPP
 #define LANGTON2_LANGTONANT_HPP
+#include <cstdint>
 #include <vector>
 #include "Direction.hpp"
 
 class LangtonAnt {
 private:
-    size_t row;
-    size_t col;
+    std::size_t row;
+    std::size_t col;
     Direction direction;
     std::vector<std::vector<bool>> board;
     Direction getNewDirection(bool black);
@@ -52,7 +53,7 @@ public:
      *
      * @return the row of this LangtonAnt
      */
-    size_t getRow() const;
+    std::size_t getRow() const;
 
     /**
      * retrieves the column postition of the board this
@@ -60,7 +61,7 @@ public:
      *
      * @return the column of this LangtonAnt
      */
-    size_t getCol() const;
+    std::size_t getCol() const;
 
     /**
      * moves this ant one position on the board according to

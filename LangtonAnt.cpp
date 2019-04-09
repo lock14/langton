@@ -1,17 +1,16 @@
 //
 // Created by brian on 4/7/2019.
 //
-
 #include "LangtonAnt.hpp"
 
 LangtonAnt::LangtonAnt(int length, int width, int row, int col, Direction direction)
 :row(row), col(col), direction(direction), board(length, std::vector<bool>(width)) {}
 
-size_t LangtonAnt::getRow() const {
+std::size_t LangtonAnt::getRow() const {
     return row;
 }
 
-size_t LangtonAnt::getCol() const {
+std::size_t LangtonAnt::getCol() const {
     return col;
 }
 
@@ -21,8 +20,8 @@ const std::vector<std::vector<bool>>& LangtonAnt::getBoard() const {
 
 void LangtonAnt::move() {
     Direction newDirection = getNewDirection(board[row][col]);
-    size_t newRow = row;
-    size_t newCol = col;
+    std::size_t newRow = row;
+    std::size_t newCol = col;
     switch (newDirection) {
         case NORTH:
             if (newRow == 0ul) {
