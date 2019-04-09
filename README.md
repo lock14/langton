@@ -15,4 +15,5 @@ Sample inputs to generate an interesting simulation are:
 * width: 100
 * row: 50
 * col: 50
+* direction: 4 (i.e. WEST)
 * iterations: 11000
