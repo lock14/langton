@@ -9,7 +9,7 @@
 bool run_simulation(size_t indent);
 void print_board(const LangtonAnt& ant);
 
-int main(int argc, char* argv[]) {
+int main() {
     auto menu = menu::Menu();
     menu.addItem(menu::MenuItem("Run Simulation", [&](){ return run_simulation(menu.getIndent()); }));
     menu.addItem(menu::MenuItem("Quit", [](){ return false; }));
