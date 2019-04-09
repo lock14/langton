@@ -18,6 +18,7 @@ $(EXEC): $(OBJECTS)
 %.o: %.cpp
 	$(CC) -c $(CC_FLAGS) $< -o $@
 
+# runtime analysis of executable
 analyze: $(EXEC)
 	$(VALGRIND) ./$(EXEC)
 
