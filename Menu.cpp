@@ -13,7 +13,7 @@ std::size_t menu::prompt_option(const std::string &prompt, const std::vector<std
     std::size_t choice;
     std::string indent(indent_val, ' ');
     std::cout << indent << prompt << " (" << 1 << ":" << options[0];
-    for (int i = 1; i < options.size(); i++) {
+    for (std::size_t i = 1; i < options.size(); i++) {
         std::cout << ", " << (i + 1) << ":" << options[i];
     }
     std::cout << ")? ";
@@ -22,7 +22,7 @@ std::size_t menu::prompt_option(const std::string &prompt, const std::vector<std
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << indent << "invalid input" << std::endl;
         std::cout << indent << prompt << " (" << 1 << ":" << options[0];
-        for (int i = 1; i < options.size(); i++) {
+        for (std::size_t i = 1; i < options.size(); i++) {
             std::cout << ", " << (i + 1) << ":" << options[i];
         }
         std::cout << ")? ";
@@ -58,7 +58,7 @@ void menu::Menu::addItem(const MenuItem& item) {
 
 bool menu::Menu::run() {
     std::string indent_str(indent, ' ');
-    for (int i = 0; i < items.size(); i++) {
+    for (std::size_t i = 0; i < items.size(); i++) {
         std::cout << indent_str << (i + 1) << ". " << items[i].getText() << std::endl;
     }
     std::size_t choice = prompt_range("your choice", 1ul, items.size(), indent);
