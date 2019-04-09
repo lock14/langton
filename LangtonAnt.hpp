@@ -37,7 +37,7 @@ public:
      * @param col the starting column of the ant, must be in range [0, width)
      * @param direction the starting direction of the ant
      */
-    LangtonAnt(int length, int width, int row, int col, Direction direction);
+    LangtonAnt(std::size_t length, std::size_t width, std::size_t row, std::size_t col, Direction direction);
 
     /**
      * retrieves the current board state that this

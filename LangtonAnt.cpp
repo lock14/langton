@@ -3,7 +3,7 @@
 //
 #include "LangtonAnt.hpp"
 
-LangtonAnt::LangtonAnt(int length, int width, int row, int col, Direction direction)
+LangtonAnt::LangtonAnt(std::size_t length, std::size_t width, std::size_t row, std::size_t col, Direction direction)
 :row(row), col(col), direction(direction), board(length, std::vector<bool>(width)) {}
 
 std::size_t LangtonAnt::getRow() const {

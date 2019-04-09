@@ -9,7 +9,7 @@
 #include <iostream>
 #include "Menu.hpp"
 
-std::size_t menu::prompt_option(const std::string &prompt, const std::vector<std::string>& options, std::size_t indent_val) {
+std::size_t menu::prompt_option(const std::string& prompt, const std::vector<std::string>& options, std::size_t indent_val) {
     std::size_t choice;
     std::string indent(indent_val, ' ');
     std::cout << indent << prompt << " (" << 1 << ":" << options[0];

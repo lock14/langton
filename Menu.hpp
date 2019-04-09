@@ -23,7 +23,7 @@ namespace menu {
      * @return the value of type T entered by the user.
      */
     template<typename T>
-    T prompt(const std::string &prompt, std::size_t indent_val = 0) {
+    T prompt(const std::string& prompt, std::size_t indent_val = 0) {
         T choice;
         std::string indent(indent_val, ' ');
         std::cout << indent << prompt << "? ";
@@ -51,7 +51,7 @@ namespace menu {
      * @return the value of type T entered by the user that is within the specified range
      */
     template<typename T>
-    T prompt_range(const std::string &prompt, const T &minValid, const T &maxValid, std::size_t indent_val = 0) {
+    T prompt_range(const std::string& prompt, const T& minValid, const T& maxValid, std::size_t indent_val = 0) {
         T choice;
         std::string indent(indent_val, ' ');
         std::cout << indent << prompt << " (" << minValid << ", " << maxValid << ")? ";
@@ -75,7 +75,7 @@ namespace menu {
      * @param indent_val the amount of spaces the prompt should be indented
      * @return the user's choice between 1 and options.size() (inclusive)
      */
-    size_t prompt_option(const std::string &prompt, const std::vector<std::string>& options, std::size_t indent_val = 0);
+    size_t prompt_option(const std::string& prompt, const std::vector<std::string>& options, std::size_t indent_val = 0);
 
     class MenuItem {
     private:
