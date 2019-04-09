@@ -9,3 +9,10 @@ $ make
 $ ./langton
 ```
 The program will prompt you for the inputs needed to run the simulation.
+
+Sample inputs to generate an interesting simulation are:
+* length: 100
+* width: 100
+* row: 50
+* col: 50
+* iterations: 11000
