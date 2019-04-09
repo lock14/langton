@@ -7,11 +7,11 @@
 LangtonAnt::LangtonAnt(int length, int width, int row, int col, Direction direction)
 :row(row), col(col), direction(direction), board(length, std::vector<bool>(width)) {}
 
-int LangtonAnt::getRow() const {
+size_t LangtonAnt::getRow() const {
     return row;
 }
 
-int LangtonAnt::getCol() const {
+size_t LangtonAnt::getCol() const {
     return col;
 }
 
@@ -21,14 +21,14 @@ const std::vector<std::vector<bool>>& LangtonAnt::getBoard() const {
 
 void LangtonAnt::move() {
     Direction newDirection = getNewDirection(board[row][col]);
-    int newRow = row;
-    int newCol = col;
+    size_t newRow = row;
+    size_t newCol = col;
     switch (newDirection) {
         case NORTH:
-            newRow--;
-            if (newRow < 0) {
+            if (newRow == 0ul) {
                 newRow += board.size();
             }
+            newRow--;
             break;
         case EAST:
             newCol++;
@@ -43,10 +43,10 @@ void LangtonAnt::move() {
             }
             break;
         case WEST:
-            newCol--;
-            if (newCol < 0) {
+            if (newCol == 0ul) {
                 newCol += board[row].size();
             }
+            newCol--;
             break;
     }
     board[row][col] = !board[row][col];

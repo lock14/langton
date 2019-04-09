@@ -9,8 +9,8 @@
 #include <iostream>
 #include "Menu.hpp"
 
-int menu::prompt_option(const std::string &prompt, const std::vector<std::string>& options, const int indent_val) {
-    int choice;
+size_t menu::prompt_option(const std::string &prompt, const std::vector<std::string>& options, const size_t indent_val) {
+    size_t choice;
     std::string indent(indent_val, ' ');
     std::cout << indent << prompt << " (" << 1 << ":" << options[0];
     for (int i = 1; i < options.size(); i++) {
@@ -49,7 +49,7 @@ menu::MenuItem::MenuItem(std::string text, std::function<bool()> f): text(std::m
 
 menu::Menu::Menu(int indent): indent(indent), items() {}
 
-int menu::Menu::getIndent() {
+size_t menu::Menu::getIndent() {
     return indent;
 }
 void menu::Menu::addItem(const MenuItem& item) {
@@ -61,6 +61,6 @@ bool menu::Menu::run() {
     for (int i = 0; i < items.size(); i++) {
         std::cout << indent_str << (i + 1) << ". " << items[i].getText() << std::endl;
     }
-    int choice = prompt_range("your choice", 1, (int) items.size(), indent);
+    size_t choice = prompt_range("your choice", 1ul, items.size(), indent);
     return items[choice - 1].getFunc()();
 }

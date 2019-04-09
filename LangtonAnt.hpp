@@ -9,8 +9,8 @@
 
 class LangtonAnt {
 private:
-    int row;
-    int col;
+    size_t row;
+    size_t col;
     Direction direction;
     std::vector<std::vector<bool>> board;
     Direction getNewDirection(bool black);
@@ -52,7 +52,7 @@ public:
      *
      * @return the row of this LangtonAnt
      */
-    int getRow() const;
+    size_t getRow() const;
 
     /**
      * retrieves the column postition of the board this
@@ -60,7 +60,7 @@ public:
      *
      * @return the column of this LangtonAnt
      */
-    int getCol() const;
+    size_t getCol() const;
 
     /**
      * moves this ant one position on the board according to
