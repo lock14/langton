@@ -52,6 +52,7 @@ menu::Menu::Menu(std::size_t indent): indent(indent), items() {}
 std::size_t menu::Menu::getIndent() {
     return indent;
 }
+
 void menu::Menu::addItem(const MenuItem& item) {
     items.push_back(item);
 }
