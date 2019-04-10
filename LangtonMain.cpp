@@ -30,7 +30,7 @@ bool run_simulation(std::size_t indent) {
     std::size_t width = menu::prompt_range("board width", 1, MAX_WIDTH, indent);
     std::size_t row = menu::prompt_range("starting row", 0ul, length - 1, indent);
     std::size_t col = menu::prompt_range("starting column", 0ul, width - 1, indent);
-    const std::vector<std::string> options = {"NORTH", "EAST", "SOUTH", "WEST"};
+    std::vector<std::string> options = {"NORTH", "EAST", "SOUTH", "WEST"};
     std::size_t direction = menu::prompt_option("starting direction", options, indent) - 1;
     std::size_t iterations = menu::prompt_range("number of iterations", 1, MAX_ITERATIONS, indent);
 
